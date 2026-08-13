@@ -62,9 +62,24 @@ export class AuthService {
         return null;
 
     }
+    async logout() {
+
+        try {
+            await this.account.deleteSession()
+
+        } catch (error) {
+            console.log("appwrite service:: logout:: error", error);
+
+        }
+
+
+    }
 }
 const authservice = new AuthService();
 
 export default AuthService;
 
 export default authservice;
+
+
+
